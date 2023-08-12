@@ -1,11 +1,17 @@
-.history {
+main {
     background-color: $tertiary-color;
-    & div {
+    & .history {
+        @extend %column;
+        align-items: center;
+        & section {
+            max-width: 1200px;
+        }
         &__romance {
             padding: 24px;
             display: flex;
             gap: 24px;
-            height: 30dvh;
+            height: 15dvh;
+            align-items: center;
             & h1 {
                 flex-shrink: 0; 
             }
@@ -18,24 +24,29 @@
         }
         & .cards-wedding {
             display: flex;
-            flex-wrap: wrap;
+            width: 100%;
+            padding: 24px;
+   
             &__card {
                 background-color: white;
-                padding: 24px;
+                padding: 24px 24px 48px 24px;
                 max-width: 500px;
                 min-width: 300px;
                 width: 100%;
                 background-image: url('https://cdn0.matrimonio.com.pe/article-real-wedding/021/3_2/960/jpg/89129.jpeg');
                 background-size: cover;
+                background-position: center;
                 background-repeat: no-repeat;
-                min-height: 70dvh;
+                min-height: 75dvh;
                 position: relative;
                 overflow: hidden;
                 @extend %column;
                 justify-content: space-between;
+                transition: all 200ms ease;
                 & * {
                     color: $secondary-color;
                     text-align: center;
+                    transition: all 200ms ease;
                 }
                 & .title {
                     padding: 12px;
@@ -48,13 +59,30 @@
                 & .shadow {
                     width: 100%;
                     background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
-                    height: 40%;
+                    height: 65%;
                     position: absolute;
                     bottom: 0;
                     left: 0;
                     z-index: 0;
                 }
+                &:hover {
+                    transform: scale(1.01);
+                    .shadow {
+                        height: 75%;
+                    }
+                }
+                &:not(__card){
+                    background-color: red;
+                }
             }
+        }
+        @media (max-width: 950px) {
+            .cards-wedding  {
+                flex-wrap: wrap;
+                &__card {
+                    max-width: none;
+                }
+            }  
         }
     }
 }

@@ -9,7 +9,7 @@ body {
 a {
   text-decoration: none; }
 
-.login main section div, .login main section div form, .login main section div form .form-input, .home__image div, .home__targets .card, .history .cards-wedding__card {
+.login main section div, .login main section div form, .login main section div form .form-input, .home__image div, .home__targets .card, main .history, main .history .cards-wedding__card {
   display: flex;
   flex-direction: column;
   gap: 8px; }
@@ -92,48 +92,69 @@ header {
         width: 100%;
         background-color: #E8E0D5; }
 
-.history {
+main {
   background-color: #6A725D; }
-  .history__romance {
-    padding: 24px;
-    display: flex;
-    gap: 24px;
-    height: 30dvh; }
-    .history__romance h1 {
-      flex-shrink: 0; }
-    .history__romance p {
-      flex-grow: 2; }
-    .history__romance * {
-      color: #E8E0D5; }
-  .history .cards-wedding {
-    display: flex;
-    flex-wrap: wrap; }
-    .history .cards-wedding__card {
-      background-color: white;
+  main .history {
+    align-items: center; }
+    main .history section {
+      max-width: 1200px; }
+    main .history__romance {
       padding: 24px;
-      max-width: 500px;
-      min-width: 300px;
-      width: 100%;
-      background-image: url("https://cdn0.matrimonio.com.pe/article-real-wedding/021/3_2/960/jpg/89129.jpeg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      min-height: 70dvh;
-      position: relative;
-      overflow: hidden;
-      justify-content: space-between; }
-      .history .cards-wedding__card * {
+      display: flex;
+      gap: 24px;
+      height: 15dvh;
+      align-items: center; }
+      main .history__romance h1 {
+        flex-shrink: 0; }
+      main .history__romance p {
+        flex-grow: 2; }
+      main .history__romance * {
         color: #E8E0D5; }
-      .history .cards-wedding__card .title {
-        padding: 12px;
-        background-color: #924032;
-        z-index: 1; }
-      .history .cards-wedding__card p {
-        z-index: 1; }
-      .history .cards-wedding__card .shadow {
+    main .history .cards-wedding {
+      display: flex;
+      width: 100%;
+      padding: 24px; }
+      main .history .cards-wedding__card {
+        background-color: white;
+        padding: 24px 24px 48px 24px;
+        max-width: 500px;
+        min-width: 300px;
         width: 100%;
-        background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 100%);
-        height: 40%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: 0; }
+        background-image: url("https://cdn0.matrimonio.com.pe/article-real-wedding/021/3_2/960/jpg/89129.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 75dvh;
+        position: relative;
+        overflow: hidden;
+        justify-content: space-between;
+        transition: all 200ms ease; }
+        main .history .cards-wedding__card * {
+          color: #E8E0D5;
+          text-align: center;
+          transition: all 200ms ease; }
+        main .history .cards-wedding__card .title {
+          padding: 12px;
+          background-color: #924032;
+          z-index: 1; }
+        main .history .cards-wedding__card p {
+          z-index: 1; }
+        main .history .cards-wedding__card .shadow {
+          width: 100%;
+          background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+          height: 65%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 0; }
+        main .history .cards-wedding__card:hover {
+          transform: scale(1.01); }
+          main .history .cards-wedding__card:hover .shadow {
+            height: 75%; }
+        main .history .cards-wedding__card:not(__card) {
+          background-color: red; }
+    @media (max-width: 950px) {
+      main .history .cards-wedding {
+        flex-wrap: wrap; }
+        main .history .cards-wedding__card {
+          max-width: none; } }
