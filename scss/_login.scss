@@ -1,0 +1,25 @@
+.login {
+    background-color: $secondary-color;
+    main {
+        display: grid;
+        place-content: center;
+        height: 100dvh;
+        section {
+            background-color: white;
+            padding: 24px;
+            div {
+                h4 {
+
+                }
+                @extend %column;
+                form {
+                    @extend %column;
+                    .form-input {
+                        @extend %column;
+                        gap: 4px;
+                    }
+                }
+            }
+        }
+    }
+}

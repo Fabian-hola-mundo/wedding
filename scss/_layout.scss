@@ -1,0 +1,21 @@
+header {
+    background-color: $primary-color;
+    nav {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        ul {
+            max-width: 1200px;
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            justify-content: space-between;
+            padding: 24px;
+            text-decoration: none;
+            list-style: none;
+            & li * {
+                color: $secondary-color;
+            }
+        }
+    }
+}
