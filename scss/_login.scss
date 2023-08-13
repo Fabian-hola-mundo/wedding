@@ -1,25 +1,74 @@
 .login {
+  background-color: $secondary-color;
+  main {
+    display: grid;
+    place-content: center;
+    height: 100dvh;
     background-color: $secondary-color;
-    main {
-        display: grid;
-        place-content: center;
-        height: 100dvh;
-        section {
-            background-color: white;
-            padding: 24px;
-            div {
-                h4 {
-
-                }
-                @extend %column;
-                form {
-                    @extend %column;
-                    .form-input {
-                        @extend %column;
-                        gap: 4px;
-                    }
-                }
-            }
+    background-image: url("/images/1x/fondo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    section {
+      width: 100dvw;
+      display: flex;
+      justify-content: center;
+      height: 100dvh;
+      overflow: hidden;
+      align-items: center;
+      .form {
+        padding: 24px;
+        min-width: 300px;
+        width: 100%;
+        height: 600px;
+        align-items: center;
+        justify-content: center;
+        max-width: 1200px;
+        position: relative;
+        @extend %column;
+        & h1 {
+            text-transform: uppercase;
+            font-weight: 400;
         }
+        & .divider {
+            height: 4px;
+            width: 80%;
+            background-color: $primary-variant;
+        }
+        & * {
+          text-align: center;
+          color: $tertiary-color;
+        }
+        form {
+          @extend %column;
+          z-index: 1;
+          align-items: center;
+          .form-input {
+            @extend %column;
+            gap: 12px;
+            & label {
+                font-size: 22px;
+            }
+            & input {
+                padding: 8px;
+                box-shadow: 2px 4px 4px rgba(0,0,0,0.12);
+                border-radius: 12px;
+                border: 1px solid $tertiary-color;
+            }
+          }
+        }
+        & embed {
+            width: 100%;
+        }
+        & img {
+          position: absolute;
+          z-index: 0;
+          width: 100%;
+          max-width: 800px;
+          min-width: 500px;
+          object-fit: contain;
+        }
+      }
     }
+  }
 }

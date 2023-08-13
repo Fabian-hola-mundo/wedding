@@ -7,13 +7,14 @@ main {
             max-width: 1200px;
         }
         &__romance {
-            padding: 24px;
+            padding: 48px 24px;
             display: flex;
             gap: 24px;
-            height: 15dvh;
+            min-height: 15dvh;
             align-items: center;
             & h1 {
                 flex-shrink: 0; 
+                font-size: 55px;
             }
             & p {
                 flex-grow: 2;
@@ -50,8 +51,9 @@ main {
                 }
                 & .title {
                     padding: 12px;
-                    background-color: $primary-color;
+                    background-color: $tertiary-color;
                     z-index: 1;
+                    text-transform: uppercase;
                 }
                 & p {
                     z-index: 1;
@@ -66,13 +68,27 @@ main {
                     z-index: 0;
                 }
                 &:hover {
-                    transform: scale(1.01);
                     .shadow {
                         height: 75%;
                     }
                 }
-                &:not(__card){
-                    background-color: red;
+                &--second {
+                    background-image: url('https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2022/01/20/16426946390095.jpg');
+                    & .title {
+                        background-color: $primary-variant;
+                        & h2 {
+
+                        }
+                    }
+                }
+                &--trirth {
+                    background-image: url('https://www.esneca.com/wp-content/uploads/como-organizar-una-boda-1200x900.jpg');
+                    & .title {
+                        background-color: $primary-color;
+                        & h2 {
+
+                        }
+                    }
                 }
             }
         }

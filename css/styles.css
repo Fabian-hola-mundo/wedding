@@ -4,12 +4,16 @@
   padding: 0; }
 
 body {
-  font-family: Arial, sans-serif; }
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif; }
+
+p {
+  font-size: 22px;
+  font-weight: 400; }
 
 a {
   text-decoration: none; }
 
-.login main section div, .login main section div form, .login main section div form .form-input, .home__image div, .home__targets .card, main .history, main .history .cards-wedding__card {
+.login main section .form, .login main section .form form, .login main section .form form .form-input, .home__image div, .home__targets .card, .home__targets .card__one, main .history, main .history .cards-wedding__card {
   display: flex;
   flex-direction: column;
   gap: 8px; }
@@ -19,15 +23,63 @@ a {
   .login main {
     display: grid;
     place-content: center;
-    height: 100dvh; }
+    height: 100dvh;
+    background-color: #E8E0D5;
+    background-image: url("/images/1x/fondo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
     .login main section {
-      background-color: white;
-      padding: 24px; }
-      .login main section div form .form-input {
-        gap: 4px; }
+      width: 100dvw;
+      display: flex;
+      justify-content: center;
+      height: 100dvh;
+      overflow: hidden;
+      align-items: center; }
+      .login main section .form {
+        padding: 24px;
+        min-width: 300px;
+        width: 100%;
+        height: 600px;
+        align-items: center;
+        justify-content: center;
+        max-width: 1200px;
+        position: relative; }
+        .login main section .form h1 {
+          text-transform: uppercase;
+          font-weight: 400; }
+        .login main section .form .divider {
+          height: 4px;
+          width: 80%;
+          background-color: #BE6E53; }
+        .login main section .form * {
+          text-align: center;
+          color: #6A725D; }
+        .login main section .form form {
+          z-index: 1;
+          align-items: center; }
+          .login main section .form form .form-input {
+            gap: 12px; }
+            .login main section .form form .form-input label {
+              font-size: 22px; }
+            .login main section .form form .form-input input {
+              padding: 8px;
+              box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.12);
+              border-radius: 12px;
+              border: 1px solid #6A725D; }
+        .login main section .form embed {
+          width: 100%; }
+        .login main section .form img {
+          position: absolute;
+          z-index: 0;
+          width: 100%;
+          max-width: 800px;
+          min-width: 500px;
+          object-fit: contain; }
 
 header {
-  background-color: #924032; }
+  background-color: #924032;
+  z-index: 10; }
   header nav {
     display: flex;
     justify-content: center;
@@ -40,14 +92,28 @@ header {
       justify-content: space-between;
       padding: 24px;
       text-decoration: none;
-      list-style: none; }
+      list-style: none;
+      align-items: center; }
       header nav ul li * {
-        color: #E8E0D5; }
+        color: #E8E0D5;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 600; }
+        header nav ul li * img {
+          color: #E8E0D5; }
+      header nav ul embed {
+        max-width: 300px;
+        width: 100%;
+        min-width: 100px; }
+      header nav ul .divisor-v {
+        width: 2px;
+        height: 100%;
+        background-color: #E8E0D5; }
 
 .home {
   width: 100%; }
   .home__image {
-    height: 100dvh;
+    height: 90dvh;
     position: relative; }
     .home__image img {
       width: 100%;
@@ -56,41 +122,84 @@ header {
     .home__image div {
       position: absolute;
       width: 100%;
-      bottom: 20%; }
+      bottom: 10%;
+      align-items: center; }
+      @media (max-width: 1007px) {
+        .home__image div img:first-child {
+          max-width: 510px;
+          object-fit: contain;
+          max-height: 360px; } }
+      .home__image div img:first-child {
+        max-width: 510px;
+        object-fit: contain; }
+      .home__image div p {
+        text-transform: uppercase;
+        font-weight: 700; }
+        .home__image div p i {
+          font-weight: 400; }
+      .home__image div embed {
+        max-width: 510px; }
       .home__image div * {
         text-align: center;
         color: #E8E0D5; }
   .home__targets {
     background-color: #E8E0D5;
+    background-image: url("/images/1x/fondo.png");
+    background-position: center;
+    background-size: cover;
     width: 100%;
     min-height: 60dvh;
     display: flex;
     gap: 12px;
-    padding: 24px;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center; }
     .home__targets .card {
-      gap: 8px;
+      gap: 18px;
       padding: 24px;
-      background-color: white;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+      background-image: url("/images/1x/marco.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      aspect-ratio: 2/3;
       border-radius: 12px;
       width: 100%;
       max-width: 450px;
       min-width: 300px;
       height: fit-content;
-      transition: all ease 200ms; }
+      justify-content: center;
+      transition: all ease 200ms;
+      align-items: center; }
+      .home__targets .card:first-child__one embed {
+        max-width: 150px !important; }
+      .home__targets .card__one {
+        gap: 24px;
+        padding: 0px 24px; }
+        .home__targets .card__one embed {
+          width: 100%;
+          max-width: 200px;
+          min-width: 100px; }
+        .home__targets .card__one i {
+          font-size: 17px; }
+        .home__targets .card__one span {
+          color: #924032;
+          font-size: 54px;
+          font-weight: 600; }
       .home__targets .card:hover {
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.17);
         transform: translateY(-6px); }
       .home__targets .card * {
         text-align: center;
         color: #6A725D; }
       .home__targets .card .divider {
-        height: 1px;
+        height: 4px;
+        width: 80%;
+        background-color: #BE6E53; }
+    .home__targets .background-image {
+      width: 100%; }
+      .home__targets .background-image img {
         width: 100%;
-        background-color: #E8E0D5; }
+        height: 100%;
+        object-fit: cover; }
 
 main {
   background-color: #6A725D; }
@@ -99,13 +208,14 @@ main {
     main .history section {
       max-width: 1200px; }
     main .history__romance {
-      padding: 24px;
+      padding: 48px 24px;
       display: flex;
       gap: 24px;
-      height: 15dvh;
+      min-height: 15dvh;
       align-items: center; }
       main .history__romance h1 {
-        flex-shrink: 0; }
+        flex-shrink: 0;
+        font-size: 55px; }
       main .history__romance p {
         flex-grow: 2; }
       main .history__romance * {
@@ -135,8 +245,9 @@ main {
           transition: all 200ms ease; }
         main .history .cards-wedding__card .title {
           padding: 12px;
-          background-color: #924032;
-          z-index: 1; }
+          background-color: #6A725D;
+          z-index: 1;
+          text-transform: uppercase; }
         main .history .cards-wedding__card p {
           z-index: 1; }
         main .history .cards-wedding__card .shadow {
@@ -147,12 +258,16 @@ main {
           bottom: 0;
           left: 0;
           z-index: 0; }
-        main .history .cards-wedding__card:hover {
-          transform: scale(1.01); }
-          main .history .cards-wedding__card:hover .shadow {
-            height: 75%; }
-        main .history .cards-wedding__card:not(__card) {
-          background-color: red; }
+        main .history .cards-wedding__card:hover .shadow {
+          height: 75%; }
+        main .history .cards-wedding__card--second {
+          background-image: url("https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2022/01/20/16426946390095.jpg"); }
+          main .history .cards-wedding__card--second .title {
+            background-color: #BE6E53; }
+        main .history .cards-wedding__card--trirth {
+          background-image: url("https://www.esneca.com/wp-content/uploads/como-organizar-una-boda-1200x900.jpg"); }
+          main .history .cards-wedding__card--trirth .title {
+            background-color: #924032; }
     @media (max-width: 950px) {
       main .history .cards-wedding {
         flex-wrap: wrap; }
