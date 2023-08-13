@@ -13,7 +13,7 @@ p {
 a {
   text-decoration: none; }
 
-.login main section .form, .login main section .form form, .login main section .form form .form-input, .home__image div, .home__targets .card, .home__targets .card__one, main .history, main .history .cards-wedding__card, .wedding-body .wedding section div .card, .wedding-body .wedding section div .card__one {
+.login main section .form, .login main section .form form, .login main section .form form .form-input, .home__image div, .home__targets .card, .home__targets .card__one, main .history, main .history .cards-wedding__card {
   display: flex;
   flex-direction: column;
   gap: 8px; }
@@ -310,126 +310,18 @@ main {
         main .history .cards-wedding__card {
           max-width: none; } }
 
-.wedding-body {
-  background-color: #E8E0D5;
-  background-image: url("/images/1x/fondo.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
-  .wedding-body .wedding {
-    position: relative;
-    background-image: none;
-    background-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; }
-    .wedding-body .wedding section {
-      display: flex;
-      z-index: 2;
-      justify-content: center;
-      position: relative;
-      height: 100%;
-      align-items: center;
-      padding: 24px; }
-      @media (max-width: 970px) {
-        .wedding-body .wedding section {
-          align-items: flex-start; } }
-      .wedding-body .wedding section div {
-        display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-        justify-content: center; }
-        .wedding-body .wedding section div .card {
-          gap: 18px;
-          padding: 24px;
-          background-image: url("/images/1x/marco2@3x.png");
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
-          aspect-ratio: 2/3;
-          border-radius: 12px;
-          width: 100%;
-          max-width: 450px;
-          min-width: 300px;
-          height: fit-content;
-          justify-content: center;
-          transition: all ease 200ms;
-          align-items: center; }
-          .wedding-body .wedding section div .card *__one embed {
-            max-width: 150px !important; }
-          .wedding-body .wedding section div .card__one {
-            gap: 24px;
-            padding: 0px 24px; }
-            .wedding-body .wedding section div .card__one:first-child {
-              justify-content: center;
-              align-items: center; }
-            .wedding-body .wedding section div .card__one embed {
-              width: 100%;
-              max-width: 200px;
-              min-width: 100px; }
-            .wedding-body .wedding section div .card__one i {
-              font-size: 17px; }
-            .wedding-body .wedding section div .card__one span {
-              color: #924032;
-              font-size: 54px;
-              font-weight: 600; }
-            .wedding-body .wedding section div .card__one .circle {
-              border-radius: 55%;
-              aspect-ratio: 1/1;
-              width: 100px;
-              overflow: hidden; }
-              .wedding-body .wedding section div .card__one .circle img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover; }
-          .wedding-body .wedding section div .card:hover {
-            transform: translateY(-6px); }
-          .wedding-body .wedding section div .card * {
-            text-align: center;
-            color: #6A725D; }
-          .wedding-body .wedding section div .card .divider {
-            height: 4px;
-            width: 80%;
-            background-color: #BE6E53; }
-    .wedding-body .wedding .palm-container {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      top: 0; }
-      .wedding-body .wedding .palm-container .palm {
-        z-index: 0;
-        width: 400px;
-        position: absolute;
-        bottom: 0;
-        left: -80px; }
-        .wedding-body .wedding .palm-container .palm--2 {
-          right: -80px;
-          left: auto;
-          transform: scaleX(-1); }
-
-.service-body {
-  background-color: #6A725D; }
-  .service-body .service {
-    position: relative;
-    background-image: none;
-    background-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; }
-    .service-body .service .palm-container {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      top: 0; }
-      .service-body .service .palm-container .palm {
-        z-index: 0;
-        width: 400px;
-        position: absolute;
-        bottom: 0;
-        left: -80px; }
-        .service-body .service .palm-container .palm--2 {
-          right: -80px;
-          left: auto;
-          transform: scaleX(-1); }
+.wedding {
+  overflow: hidden;
+  height: 100dvh;
+  width: 100dvw;
+  position: relative; }
+  .wedding embed:first-child {
+    width: 400px;
+    position: absolute;
+    bottom: 0;
+    left: -50px; }
+  .wedding embed:last-child {
+    width: 400px;
+    position: absolute;
+    bottom: 0;
+    right: -50px; }
