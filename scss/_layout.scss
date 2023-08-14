@@ -1,40 +1,88 @@
 header {
-    background-color: $primary-color;
+  background-color: $primary-color;
+  z-index: 10;
+  nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     z-index: 10;
-    nav {
-        display: flex;
-        justify-content: center;
+    ul {
+      max-width: 1200px;
+      display: flex;
+      gap: 8px;
+      width: 100%;
+      justify-content: space-between;
+      padding: 24px;
+      text-decoration: none;
+      list-style: none;
+      align-items: center;
+      & li * {
+        color: $secondary-color;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 600;
+        & img {
+          color: $secondary-color;
+        }
+      }
+      & embed {
+        max-width: 300px;
         width: 100%;
-        z-index: 10;
-        ul {
-            max-width: 1200px;
-            display: flex;
-            gap: 8px;
-            width: 100%;
-            justify-content: space-between;
-            padding: 24px;
-            text-decoration: none;
-            list-style: none;
-            align-items: center;
-            & li * {
-                color: $secondary-color;
-                text-transform: uppercase;
-                font-size: 18px;
-                font-weight: 600;
-                & img {
-                    color: $secondary-color;
-                }
-            }
+        min-width: 100px;
+      }
+      & .divisor-v {
+        width: 2px;
+        height: 100%;
+        background-color: $secondary-color;
+      }
+    }
+  }
+  & .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      & .bar {
+        width: 30px;
+        height: 3px;
+        background-color: $secondary-color;
+        margin: 3px 0;
+      }
+    }
+  & .contain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    display: none;
+    & embed {
+        max-height: 40px;
+    }
+  }
+  @media (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+      & .contain {
+          display: flex;
+        & embed {
+        }
+      }
+      & nav {
+        display: none;
+        & ul {
+            flex-direction: column;
             & embed {
-                max-width: 300px;
-                width: 100%;
-                min-width: 100px;
+                display: none;
             }
             & .divisor-v {
-                width: 2px;
-                height: 100%;
-                background-color: $secondary-color;
+                display: none;
             }
         }
+      }
+      & #nav.active {
+        display: flex;
+      }
     }
 }
+

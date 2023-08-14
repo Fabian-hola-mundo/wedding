@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0; }
 
-body {
+body, button {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif; }
 
 p {
@@ -13,7 +13,7 @@ p {
 a {
   text-decoration: none; }
 
-.login main section .form, .login main section .form form, .login main section .form form .form-input, .home__image div, .home__targets .card, .home__targets .card__one, main .history, main .history .cards-wedding__card, .wedding-body .wedding section div .card, .wedding-body .wedding section div .card__one {
+.login main section .form, .login main section .form form, .login main section .form form .form-input, .home__image div, .home__targets .card, .home__targets .card__one, main .history, main .history .cards-wedding__card, .wedding-body .wedding section div .card, .wedding-body .wedding section div .card__one, .service-body .service section, .service-body .service section div {
   display: flex;
   flex-direction: column;
   gap: 8px; }
@@ -126,6 +126,39 @@ header {
         width: 2px;
         height: 100%;
         background-color: #E8E0D5; }
+  header .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer; }
+    header .menu-icon .bar {
+      width: 30px;
+      height: 3px;
+      background-color: #E8E0D5;
+      margin: 3px 0; }
+  header .contain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    display: none; }
+    header .contain embed {
+      max-height: 40px; }
+  @media (max-width: 768px) {
+    header .menu-icon {
+      display: flex; }
+    header .contain {
+      display: flex; }
+    header nav {
+      display: none; }
+      header nav ul {
+        flex-direction: column; }
+        header nav ul embed {
+          display: none; }
+        header nav ul .divisor-v {
+          display: none; }
+    header #nav.active {
+      display: flex; } }
 
 .home {
   width: 100%; }
@@ -417,19 +450,85 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; }
-    .service-body .service .palm-container {
-      position: absolute;
+    .service-body .service section {
+      z-index: 1;
+      position: relative;
       width: 100%;
-      height: 100%;
-      overflow: hidden;
-      top: 0; }
-      .service-body .service .palm-container .palm {
-        z-index: 0;
-        width: 400px;
+      justify-content: center;
+      align-items: center; }
+      .service-body .service section div {
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        z-index: 1;
+        position: relative; }
+        .service-body .service section div * {
+          color: #E8E0D5;
+          text-align: center; }
+        .service-body .service section div img {
+          max-width: 300px; }
+        .service-body .service section div .service-button {
+          background-color: #BE6E53;
+          font-size: 24px;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding: 12px 18px;
+          border: 0;
+          border-radius: 34px; }
+      .service-body .service section .palm-container {
         position: absolute;
-        bottom: 0;
-        left: -80px; }
-        .service-body .service .palm-container .palm--2 {
-          right: -80px;
-          left: auto;
-          transform: scaleX(-1); }
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        z-index: 0; }
+        .service-body .service section .palm-container .palm {
+          z-index: 0;
+          width: 400px;
+          position: absolute;
+          bottom: 0;
+          left: -80px; }
+          .service-body .service section .palm-container .palm--2 {
+            right: -80px;
+            left: auto;
+            transform: scaleX(-1); }
+    .service-body .service * i {
+      font-size: 22px; }
+    .service-body .service .map {
+      background-image: url("/images/1x/fondo-verde.png");
+      background-position: center;
+      background-size: contain; }
+      .service-body .service .map div {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        width: 100%;
+        flex-wrap: wrap; }
+        .service-body .service .map div embed {
+          width: 100%;
+          max-width: 600px; }
+        .service-body .service .map div div {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          background-image: url("/images/1x/marco.png");
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          aspect-ratio: 2/3;
+          max-width: 500px;
+          width: 100%;
+          padding: 24px 48px; }
+          .service-body .service .map div div * {
+            color: #6A725D; }
+          .service-body .service .map div div img {
+            width: 100px;
+            aspect-ratio: 1/1;
+            border-radius: 60px; }
+
+.divisor-service {
+  height: 4px;
+  width: 100%;
+  max-width: 300px;
+  background: linear-gradient(90deg, #f2d891 0%, #f7eee1 53%, #ca8e23 100%);
+  padding: 0 !important; }

@@ -1,30 +1,112 @@
 .service-body {
-    background-color: $tertiary-color;
-    .service {
+  background-color: $tertiary-color;
+  .service {
+    position: relative;
+    background-image: none;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    & section {
+      z-index: 1;
+      position: relative;
+      width: 100%;
+      @extend %column;
+      justify-content: center;
+      align-items: center;
+      & div {
+        @extend %column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        z-index: 1;
         position: relative;
-        background-image: none;
-        background-color: transparent;
+        * {
+          color: $secondary-color;
+          text-align: center;
+        }
+        & img {
+          max-width: 300px;
+        }
+        & .plans {
+        }
+        & .service-button {
+          background-color: $primary-variant;
+          font-size: 24px;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding: 12px 18px;
+          border: 0;
+          border-radius: 34px;
+        }
+      }
+      & .palm-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        z-index: 0;
+        & .palm {
+          z-index: 0;
+          width: 400px;
+          position: absolute;
+          bottom: 0;
+          left: -80px;
+          &--2 {
+            right: -80px;
+            left: auto;
+            transform: scaleX(-1);
+          }
+        }
+      }
+    }
+    & * i {
+      font-size: 22px;
+    }
+    & .map {
+        background-image: url('/images/1x/fondo-verde.png');
         background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        & .palm-container {
-            position: absolute;
+        background-size: contain;
+        & div {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
             width: 100%;
-            height: 100%;
-            overflow: hidden;
-            top: 0;
-            & .palm {
-                z-index: 0;
-                width: 400px;
-                position: absolute;
-                bottom: 0;
-                left: -80px;
-                &--2 {
-                    right: -80px;
-                    left: auto;
-                    transform: scaleX(-1);
+            flex-wrap: wrap;
+            & embed {
+                width: 100%;
+                max-width: 600px;
+            }
+            & div {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                background-image: url("/images/1x/marco.png");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                aspect-ratio: 2/3;
+                max-width: 500px;
+                width: 100%;
+                padding: 24px 48px;
+                & * {
+                    color: $tertiary-color;
+                }
+                & img {
+                    width: 100px;
+                    aspect-ratio: 1/1;
+                    border-radius: 60px;
                 }
             }
         }
     }
+  }
+}
+.divisor-service {
+  height: 4px;
+  width: 100%;
+  max-width: 300px;
+  background: linear-gradient(90deg, #f2d891 0%, #f7eee1 53%, #ca8e23 100%);
+  padding: 0 !important;
 }
