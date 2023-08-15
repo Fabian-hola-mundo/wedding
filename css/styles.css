@@ -533,11 +533,13 @@ main {
             left: auto;
             transform: scaleX(-1); }
       @media (max-width: 750px) {
-        .service-body .service section .palm-container .palm {
-          left: -180px; }
-          .service-body .service section .palm-container .palm--2 {
-            left: auto;
-            right: -180px; } }
+        .service-body .service section .palm-container {
+          display: none; }
+          .service-body .service section .palm-container .palm {
+            left: -180px; }
+            .service-body .service section .palm-container .palm--2 {
+              left: auto;
+              right: -180px; } }
     .service-body .service * i {
       font-size: 22px; }
     .service-body .service .map {

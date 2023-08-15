@@ -69,6 +69,8 @@
       }
       @media (max-width: 750px) {
         .palm-container {
+          // Puede ser activado, pero la legibilidad es paila
+          display: none;
           .palm {
             left: -180px;
             &--2 {
