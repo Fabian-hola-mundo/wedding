@@ -35,6 +35,7 @@ a {
       justify-content: center;
       height: 100dvh;
       overflow: hidden;
+      position: relative;
       align-items: center; }
       .login main section .form {
         padding: 24px;
@@ -44,7 +45,8 @@ a {
         align-items: center;
         justify-content: center;
         max-width: 1200px;
-        position: relative; }
+        position: relative;
+        z-index: 1; }
         .login main section .form h1 {
           text-transform: uppercase;
           font-weight: 400; }
@@ -92,6 +94,21 @@ a {
           min-width: 800px;
           object-fit: contain;
           top: -80px; }
+      .login main section .palm-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0; }
+        .login main section .palm-container embed {
+          width: 100%;
+          position: absolute;
+          max-width: 400px;
+          bottom: -70px; }
+          .login main section .palm-container embed:first-child {
+            left: -100px; }
+          .login main section .palm-container embed:last-child {
+            right: -100px;
+            transform: scaleX(-1); }
 
 header {
   background-color: #924032;
@@ -143,7 +160,7 @@ header {
     padding: 12px;
     display: none; }
     header .contain embed {
-      max-height: 40px; }
+      max-height: 25px; }
   @media (max-width: 768px) {
     header .menu-icon {
       display: flex; }
@@ -174,7 +191,8 @@ header {
       position: absolute;
       width: 100%;
       bottom: 10%;
-      align-items: center; }
+      align-items: center;
+      padding: 12px; }
       @media (max-width: 1007px) {
         .home__image div img:first-child {
           max-width: 510px;
@@ -185,7 +203,8 @@ header {
         object-fit: contain; }
       .home__image div p {
         text-transform: uppercase;
-        font-weight: 700; }
+        font-weight: 700;
+        border-bottom: 4px solid #E8E0D5; }
         .home__image div p i {
           font-weight: 400; }
       .home__image div embed {
@@ -216,7 +235,6 @@ header {
       border-radius: 12px;
       width: 100%;
       max-width: 450px;
-      min-width: 300px;
       height: fit-content;
       justify-content: center;
       transition: all ease 200ms;
@@ -264,10 +282,12 @@ main {
       display: flex;
       gap: 24px;
       min-height: 15dvh;
-      align-items: center; }
+      align-items: center;
+      width: 100%; }
       main .history__romance embed {
         flex-shrink: 0;
-        width: 330px; }
+        max-width: 330px;
+        width: 100%; }
       main .history__romance i {
         flex-grow: 2;
         font-size: 22px; }
@@ -289,7 +309,6 @@ main {
         padding: 24px 24px 48px 24px;
         border-radius: 24px;
         max-width: 500px;
-        min-width: 300px;
         width: 100%;
         background-image: url("https://cdn0.matrimonio.com.pe/article-real-wedding/021/3_2/960/jpg/89129.jpeg");
         background-size: cover;
@@ -349,6 +368,10 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
+  @media (min-width: 976px) {
+    .wedding-body .wedding {
+      overflow: hidden;
+      height: 90dvh; } }
   .wedding-body .wedding {
     position: relative;
     background-image: none;
@@ -387,7 +410,8 @@ main {
           height: fit-content;
           justify-content: center;
           transition: all ease 200ms;
-          align-items: center; }
+          align-items: center;
+          flex-wrap: nowrap; }
           .wedding-body .wedding section div .card *__one embed {
             max-width: 150px !important; }
           .wedding-body .wedding section div .card__one {
@@ -429,7 +453,7 @@ main {
       width: 100%;
       height: 100%;
       overflow: hidden;
-      top: 0; }
+      bottom: -160px; }
       .wedding-body .wedding .palm-container .palm {
         z-index: 0;
         width: 400px;
@@ -440,6 +464,15 @@ main {
           right: -80px;
           left: auto;
           transform: scaleX(-1); }
+
+@media (max-width: 976px) {
+  .palm-container {
+    bottom: 0 !important; }
+    .palm-container .palm {
+      left: -180px; }
+      .palm-container .palm--2 {
+        left: auto;
+        right: -180px; } }
 
 .service-body {
   background-color: #6A725D; }
@@ -461,12 +494,19 @@ main {
         justify-content: center;
         padding: 24px;
         z-index: 1;
-        position: relative; }
+        position: relative;
+        width: 100%;
+        gap: 24px; }
         .service-body .service section div * {
           color: #E8E0D5;
           text-align: center; }
         .service-body .service section div img {
-          max-width: 300px; }
+          max-width: 300px;
+          width: 100%; }
+        .service-body .service section div .plans {
+          padding: 0; }
+        .service-body .service section div div {
+          padding: 0; }
         .service-body .service section div .service-button {
           background-color: #BE6E53;
           font-size: 24px;
@@ -480,7 +520,7 @@ main {
         width: 100%;
         height: 100%;
         overflow: hidden;
-        top: 0;
+        bottom: -100px;
         z-index: 0; }
         .service-body .service section .palm-container .palm {
           z-index: 0;
@@ -492,6 +532,12 @@ main {
             right: -80px;
             left: auto;
             transform: scaleX(-1); }
+      @media (max-width: 750px) {
+        .service-body .service section .palm-container .palm {
+          left: -180px; }
+          .service-body .service section .palm-container .palm--2 {
+            left: auto;
+            right: -180px; } }
     .service-body .service * i {
       font-size: 22px; }
     .service-body .service .map {
@@ -503,10 +549,12 @@ main {
         flex-direction: row;
         gap: 24px;
         width: 100%;
-        flex-wrap: wrap; }
+        flex-wrap: wrap;
+        padding: 0; }
         .service-body .service .map div embed {
           width: 100%;
-          max-width: 600px; }
+          max-width: 600px;
+          padding: 12px; }
         .service-body .service .map div div {
           width: 100%;
           display: flex;
@@ -518,13 +566,25 @@ main {
           aspect-ratio: 2/3;
           max-width: 500px;
           width: 100%;
-          padding: 24px 48px; }
+          padding: 24px 48px;
+          flex-wrap: nowrap; }
           .service-body .service .map div div * {
             color: #6A725D; }
           .service-body .service .map div div img {
-            width: 100px;
+            width: 100%;
+            max-width: 120px;
             aspect-ratio: 1/1;
-            border-radius: 60px; }
+            border-radius: 160px; }
+          .service-body .service .map div div embed {
+            max-width: 300px; }
+          @media (max-width: 460px) {
+            .service-body .service .map div div p {
+              font-size: 17px; } }
+        @media (max-width: 460px) {
+          .service-body .service .map div div {
+            padding: 44px;
+            margin: 0 12px;
+            gap: 0; } }
 
 .divisor-service {
   height: 4px;

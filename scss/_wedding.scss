@@ -4,6 +4,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @media (min-width:976px) {
+      .wedding {
+        overflow: hidden;
+        height: 90dvh;
+      }
+    }
+
     .wedding {
         position: relative;
         background-image: none;
@@ -44,6 +51,7 @@
                     justify-content: center;
                     transition: all ease 200ms;
                     align-items: center;
+                    flex-wrap: nowrap;
                     & * {
                       &__one {
                         & embed {
@@ -99,12 +107,13 @@
                   }
             }
         }
+
         & .palm-container {
             position: absolute;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            top: 0;
+            bottom: -160px;
             & .palm {
                 z-index: 0;
                 width: 400px;
@@ -119,4 +128,17 @@
             }
         }
     }
+}
+
+@media (max-width:976px) {
+  .palm-container {
+    bottom: 0 !important;
+    & .palm {
+      left: -180px;
+      &--2 {
+        left: auto;
+        right: -180px;
+      }
+    }
+  }
 }
