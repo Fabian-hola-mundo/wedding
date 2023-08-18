@@ -37,6 +37,37 @@ header {
       }
     }
   }
+  & .container-path {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    &__path {
+      clip-path: polygon(0 0, 100% 0, 92% 93%, 8% 93%);
+      background: linear-gradient(90deg, #f2d891 0%, #f7eee1 53%, #ca8e23 100%);
+      width: 100%;
+      max-width: 1200px;
+      padding: 6px 12px 8px 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & h2 {
+        text-align: center;
+        width: 100%;
+        color: $tertiary-color;
+        font-weight: 400;
+        & span {
+          padding-right: 8px;
+        }
+      }
+      @media (max-width:1008px) {
+        h2 {
+          font-size: 17px;
+        }
+      }
+    }
+  }
   & .menu-icon {
       display: none;
       flex-direction: column;

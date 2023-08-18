@@ -25,7 +25,7 @@ a {
     place-content: center;
     height: 100dvh;
     background-color: #E8E0D5;
-    background-image: url("/images/1x/fondo.png");
+    background-image: url("../images/1x/fondo.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; }
@@ -109,6 +109,9 @@ a {
           .login main section .palm-container embed:last-child {
             right: -100px;
             transform: scaleX(-1); }
+        @media (max-width: 1008px) {
+          .login main section .palm-container {
+            display: none; } }
 
 header {
   background-color: #924032;
@@ -143,6 +146,31 @@ header {
         width: 2px;
         height: 100%;
         background-color: #E8E0D5; }
+  header .container-path {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%; }
+    header .container-path__path {
+      clip-path: polygon(0 0, 100% 0, 92% 93%, 8% 93%);
+      background: linear-gradient(90deg, #f2d891 0%, #f7eee1 53%, #ca8e23 100%);
+      width: 100%;
+      max-width: 1200px;
+      padding: 6px 12px 8px 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      header .container-path__path h2 {
+        text-align: center;
+        width: 100%;
+        color: #6A725D;
+        font-weight: 400; }
+        header .container-path__path h2 span {
+          padding-right: 8px; }
+      @media (max-width: 1008px) {
+        header .container-path__path h2 {
+          font-size: 17px; } }
   header .menu-icon {
     display: none;
     flex-direction: column;
@@ -272,15 +300,15 @@ header {
 
 main {
   background-color: #6A725D;
-  background-image: url("/images/1x/fondo-verde.png"); }
+  background-image: url("../images/1x/fondo-verde.png"); }
   main .history {
     align-items: center; }
     main .history section {
       max-width: 1200px; }
     main .history__romance {
-      padding: 48px 24px;
+      padding: 72px 24px 48px 24px;
       display: flex;
-      gap: 24px;
+      gap: 72px;
       min-height: 15dvh;
       align-items: center;
       width: 100%; }
@@ -492,7 +520,7 @@ main {
       .service-body .service section div {
         align-items: center;
         justify-content: center;
-        padding: 24px;
+        padding: 72px 24px;
         z-index: 1;
         position: relative;
         width: 100%;
@@ -524,14 +552,15 @@ main {
         z-index: 0; }
         .service-body .service section .palm-container .palm {
           z-index: 0;
-          width: 400px;
           position: absolute;
           bottom: 0;
           left: -80px; }
+          .service-body .service section .palm-container .palm--1 {
+            width: 500px; }
           .service-body .service section .palm-container .palm--2 {
-            right: -80px;
-            left: auto;
-            transform: scaleX(-1); }
+            width: 400px;
+            right: -180px;
+            left: auto; }
       @media (max-width: 750px) {
         .service-body .service section .palm-container {
           display: none; }

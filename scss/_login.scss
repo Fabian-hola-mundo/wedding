@@ -5,7 +5,7 @@
     place-content: center;
     height: 100dvh;
     background-color: $secondary-color;
-    background-image: url("/images/1x/fondo.png");
+    background-image: url("../images/1x/fondo.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -106,6 +106,9 @@
             right: -100px;
             transform: scaleX(-1);
           }
+        }
+        @media (max-width:1008px) {
+          display: none;
         }
       }
     }

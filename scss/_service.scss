@@ -18,7 +18,7 @@
         @extend %column;
         align-items: center;
         justify-content: center;
-        padding: 24px;
+        padding: 72px 24px;
         z-index: 1;
         position: relative;
         width: 100%;
@@ -56,14 +56,16 @@
         z-index: 0;
         & .palm {
           z-index: 0;
-          width: 400px;
           position: absolute;
           bottom: 0;
           left: -80px;
+          &--1 {
+            width: 500px;
+          }
           &--2 {
-            right: -80px;
+            width: 400px;
+            right: -180px;
             left: auto;
-            transform: scaleX(-1);
           }
         }
       }

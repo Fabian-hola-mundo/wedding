@@ -1,6 +1,6 @@
 main {
     background-color: $tertiary-color;
-    background-image: url('/images/1x/fondo-verde.png');
+    background-image: url('../images/1x/fondo-verde.png');
     & .history {
         @extend %column;
         align-items: center;
@@ -8,9 +8,9 @@ main {
             max-width: 1200px;
         }
         &__romance {
-            padding: 48px 24px;
+            padding: 72px 24px 48px 24px;
             display: flex;
-            gap: 24px;
+            gap: 72px;
             min-height: 15dvh;
             align-items: center;
             width: 100%;
