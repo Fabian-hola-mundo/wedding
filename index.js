@@ -48,24 +48,3 @@ function inactiveAllCards() {
     c.classList.remove("showCard");
   });
 }
-
-
-/* function openCard (card, activator) {
-  activator.addEventListener("click", () => {
-    card.classList.toggle("cardActive")
-    console.log('works', card, activator)
-  })
-}
-
-
-
-openCard(card1, check1)
-openCard(card2, check2)
-openCard(card2, check3)
- */
-
-function logSimple (activator, card) {
-  console.log(activator, card)
-}
-
-logSimple(card1, check1)
