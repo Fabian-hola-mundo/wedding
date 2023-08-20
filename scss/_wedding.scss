@@ -11,6 +11,10 @@
       }
     }
 
+    & .star {
+      z-index: -1;
+    }
+
     .wedding {
         position: relative;
         background-image: none;

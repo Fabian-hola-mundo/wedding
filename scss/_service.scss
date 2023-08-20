@@ -66,6 +66,7 @@
             width: 400px;
             right: -180px;
             left: auto;
+            bottom: 60px;
           }
         }
       }
@@ -87,61 +88,112 @@
       font-size: 22px;
     }
     & .map {
-        background-image: url('/images/1x/fondo-verde.png');
-        background-position: center;
-        background-size: contain;
-        & div {
-            display: flex;
-            flex-direction: row;
-            gap: 24px;
-            width: 100%;
-            flex-wrap: wrap;
-            padding: 0;
-            & embed {
-                width: 100%;
-                max-width: 600px;
-                padding: 12px;
-            }
+      background-image: url("/images/1x/fondo-verde.png");
+      background-position: center;
+      background-size: contain;
+      & .star {
+        position: absolute;
+        background-image: none;
+      }
+      & div {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 0;
 
-            & div {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                background-image: url("/images/1x/marco.png");
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                aspect-ratio: 2/3;
-                max-width: 500px;
-                width: 100%;
-                padding: 24px 48px;
-                flex-wrap: nowrap;
-                & * {
-                    color: $tertiary-color;
-                }
-                & img {
-                    width: 100%;
-                    max-width: 120px;
-                    aspect-ratio: 1/1;
-                    border-radius: 160px;
-                }
-                & embed {
-                  max-width: 300px;
-                }
-                @media (max-width: 460px) {
-                  p {
-                    font-size: 17px;
-                  }
-                }
+        & .map-image-container {
+          background-image: none;
+          padding: 12px;
+          max-width: 700px;
+          position: relative !important;
+          aspect-ratio: 1/1;
+          &__place {
+            background-image: none;
+            position: absolute !important;
+            width: 100px;
+            padding: 0;
+            height: 100px;
+            background-color: #ca8e23;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 200ms ease;
+            &:hover {
+              transform: scale(1.1);
             }
-            @media (max-width:460px) {
-              div {
-                padding: 44px;
-                margin: 0 12px;
-                gap: 0;
-              }
+            &--1 {
+              left: 25%;
+              top: 25%;
             }
+            &--2 {
+              background-color: aqua;
+              top: 35%;
+              right: 25%;
+            }
+            &--3 {
+              background-color: blueviolet;
+              bottom: 25%;
+              left: 25%;
+            }
+          }
+          & embed {
+            width: 100%;
+            max-width: 700px;
+            padding: 0px;
+          }
         }
+
+        & div {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          background-image: url("/images/1x/marco.png");
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          aspect-ratio: 2/3;
+          max-width: 500px;
+          width: 100%;
+          padding: 24px 48px;
+          flex-wrap: nowrap;
+          & * {
+            color: $tertiary-color;
+          }
+          & img {
+            width: 100%;
+            max-width: 120px;
+            aspect-ratio: 1/1;
+            border-radius: 160px;
+          }
+          & embed {
+            max-width: 300px;
+          }
+          @media (max-width: 460px) {
+            p {
+              font-size: 17px;
+            }
+          }
+        }
+        @media (max-width: 460px) {
+          div {
+            padding: 44px;
+            margin: 0 12px;
+            gap: 0;
+          }
+        }
+        & .card-map {
+          &--1 {
+            display: none;
+          }
+          &--2 {
+            display: none;
+          }
+          &--3 {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
@@ -151,4 +203,12 @@
   max-width: 300px;
   background: linear-gradient(90deg, #f2d891 0%, #f7eee1 53%, #ca8e23 100%);
   padding: 0 !important;
+}
+
+.showCard {
+  display: flex !important;
+}
+
+.hideCards {
+  display: none !important;
 }
